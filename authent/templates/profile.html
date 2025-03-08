@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="form2">
+    <form action="">
+        <h1> verified user</h1>
+<h1>{{request.user.username}}</h1>
+<h1>{{request.user.email}}</h1>
+    </form>
+</div>
+{% endblock content %}

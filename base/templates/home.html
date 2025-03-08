@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="home">
+    {% for i in products %}
+    <div class="addcard">
+        <h2>{{i.name}}</h2>
+        <img src="{{i.img.url}}" alt="{{ i.name }}" width="200px" height="100" onclick="showImage(this)">
+    <h3>{{i.desc}} <br> <sup>&#8377;</sup>{{i.cost}}</h3>
+    <h3><a href="{% url 'add' i.id %}">Add_to_Cart</a></h3>
+    </div>
+    <div id="imageModal" class="modal" onclick="closeImage()">
+        <img id="largeImage" src="">
+    </div>
+    {% endfor %}
+</div>
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock content %}

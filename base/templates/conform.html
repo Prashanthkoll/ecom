@@ -1,0 +1,9 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>Are you sure to delete all order items!</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="del" value="Delete">
+</form>
+<a href="{% url 'add1' %}">Back</a>
+{% endblock content %}
